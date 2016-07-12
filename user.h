@@ -23,6 +23,10 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 int getyear(void);
+int getkernelendaddr(void);
+int getkernelvariaddr(void);
+int getsystemcalladdr(void);
+int getkernelstartaddr(void);
 
 // ulib.c
 int stat(char*, struct stat*);

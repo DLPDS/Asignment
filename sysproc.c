@@ -94,3 +94,23 @@ sys_getyear(void)
 {
   return 1975;
 }
+
+int
+sys_getkernelendaddr(void){
+return KERNBASE+PHYSTOP;
+}
+
+int
+sys_getkernelvariaddr(void){
+  int x=2;
+  int *ad=&x;
+  return (int)ad;
+}
+
+int sys_getsystemcalladdr(void){
+  return (int)sys_fork;
+}
+
+int sys_getkernelstartaddr(void){
+  return KERNBASE;
+}
