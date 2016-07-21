@@ -28,6 +28,7 @@ int getkernelvariaddr(void);
 int getsystemcalladdr(void);
 int getkernelstartaddr(void);
 int setpriority(int);
+int getinodesize(char*);
 
 // ulib.c
 int stat(char*, struct stat*);

@@ -26,3 +26,4 @@
 #define SYS_getsystemcalladdr 25
 #define SYS_getkernelstartaddr 26
 #define SYS_setpriority 27
+#define SYS_getinodesize 28
