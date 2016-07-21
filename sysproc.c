@@ -114,3 +114,11 @@ int sys_getsystemcalladdr(void){
 int sys_getkernelstartaddr(void){
   return KERNBASE;
 }
+
+int sys_setpriority(void){
+  int n;
+  if(argint(0, &n) < 0)
+    return 0;
+  proc->priority=n;
+  return 1;
+}

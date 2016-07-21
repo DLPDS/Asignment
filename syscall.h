@@ -25,3 +25,4 @@
 #define SYS_getkernelvariaddr 24
 #define SYS_getsystemcalladdr 25
 #define SYS_getkernelstartaddr 26
+#define SYS_setpriority 27
