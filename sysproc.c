@@ -122,3 +122,24 @@ int sys_setpriority(void){
   proc->priority=n;
   return 1;
 }
+
+int
+sys_mycall(void)
+{
+  int size;
+  char *buf;
+
+
+  if (argint(0, &size) <0){
+    return -1;
+  }
+
+  if (argptr(1, &buf,size) <0){
+    return -1;
+  }
+
+  walkprocesstable(buf,size);
+
+
+  return 3;
+}

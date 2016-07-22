@@ -457,4 +457,27 @@ procdump(void)
   }
 }
 
+void walkprocesstable(char *memaddr,int size){
+  struct proc *p;
+  char *s;
+  acquire(&ptable.lock);
+
+  s = memaddr;
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+
+    if(memaddr + size <= s){
+      break;
+    }
+
+    *(int *)s = p->pid;
+    s+=4;
+    *(int *)s = p->sz;
+    s+=4;
+  }
+
+
+  release(&ptable.lock);
+
+}
+
 

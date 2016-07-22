@@ -105,6 +105,7 @@ extern int sys_getsystemcalladdr(void);
 extern int sys_getkernelstartaddr(void);
 extern int sys_setpriority(void);
 extern int sys_getinodesize(void);
+extern int sys_mycall(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -135,6 +136,7 @@ static int (*syscalls[])(void) = {
 [SYS_getkernelstartaddr] sys_getkernelstartaddr,
 [SYS_setpriority] sys_setpriority,
 [SYS_getinodesize] sys_getinodesize,
+[SYS_mycall] sys_mycall,
 };
 
 void

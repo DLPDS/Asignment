@@ -1,9 +1,27 @@
 #include "types.h"
 #include "stat.h"
 #include "user.h"
+
+#define NUM_STRUCTS 10
+
+struct mystruct {
+    int value1;
+    int value2;
+};
+
 int main(void) {
-    printf(1, "Background service started... \n");
-    while(1){
-        sleep(5);
+
+    struct mystruct struct_array[NUM_STRUCTS];
+    struct mystruct *p;
+
+    int return_val = mycall( NUM_STRUCTS*sizeof(struct mystruct), &struct_array);
+    p = &struct_array[0];
+//value 1 will be pid and value2 will be size
+    while(p != &struct_array[NUM_STRUCTS-1]){
+        printf(1,"%d  %d \n",p->value1,p->value2);
+        p++;
     }
+
+    printf(1, "Program %d \n", return_val);
+    exit();
 }

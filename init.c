@@ -32,20 +32,7 @@ main(void)
       exit();
     }
 
-//-------------------------------------------------------
-//This code segment create the new process and child's code will overwrite by myprog  (  exec(myprog,argv)  )
-    pid = fork();
-    if(pid < 0){
-      printf(1, "init: fork failed\n");
-      exit();
-    }
 
-    if(pid == 0){
-      exec("myprog", argv);
-      printf(1, "init: exec sh failed\n");
-      exit();
-    }
-//---------------------------------------------------------------
     while((wpid=wait()) >= 0 && wpid != pid)
       printf(1, "zombie!\n");
   }
