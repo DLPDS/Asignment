@@ -5,6 +5,7 @@
 #include "memlayout.h"
 #include "mmu.h"
 #include "proc.h"
+#include "guestSysCalls.h"
 
 int
 sys_fork(void)
@@ -142,4 +143,19 @@ sys_mycall(void)
 
 
   return 3;
+}
+
+int
+sys_vmtrap(void){
+  int para;
+  if (argint(0, &para) <0){
+    return -1;
+  }
+  if(proc->name[0]=='g' && proc->name[1]=='u' && proc->name[0]=='e' && proc->name[0]=='s'){
+    return gtrap(para);
+  }
+  else{
+    kill(proc->pid);
+    return 0;
+  }
 }

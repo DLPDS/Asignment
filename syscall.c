@@ -106,6 +106,7 @@ extern int sys_getkernelstartaddr(void);
 extern int sys_setpriority(void);
 extern int sys_getinodesize(void);
 extern int sys_mycall(void);
+extern int sys_vmtrap(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -137,6 +138,7 @@ static int (*syscalls[])(void) = {
 [SYS_setpriority] sys_setpriority,
 [SYS_getinodesize] sys_getinodesize,
 [SYS_mycall] sys_mycall,
+[SYS_vmtrap] sys_vmtrap,
 };
 
 void

@@ -28,3 +28,4 @@
 #define SYS_setpriority 27
 #define SYS_getinodesize 28
 #define SYS_mycall 29
+#define SYS_vmtrap 30

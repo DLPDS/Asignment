@@ -30,6 +30,7 @@ int getkernelstartaddr(void);
 int setpriority(int);
 int getinodesize(char*);
 int mycall(int, void *);
+int vmtrap(int);
 
 // ulib.c
 int stat(char*, struct stat*);
