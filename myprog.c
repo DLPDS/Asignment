@@ -7,6 +7,7 @@
 struct mystruct {
     int value1;
     int value2;
+    char name[16];
 };
 
 int main(void) {
@@ -18,7 +19,7 @@ int main(void) {
     p = &struct_array[0];
 //value 1 will be pid and value2 will be size
     while(p != &struct_array[NUM_STRUCTS-1]){
-        printf(1,"%d  %d \n",p->value1,p->value2);
+        printf(1,"%d  %d %s\n",p->value1,p->value2,p->name);
         p++;
     }
 

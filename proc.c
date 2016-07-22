@@ -473,6 +473,12 @@ void walkprocesstable(char *memaddr,int size){
     s+=4;
     *(int *)s = p->sz;
     s+=4;
+    int i=0;
+    for (i=0;i<16;i++){
+      *(char *)s = p->name[i];
+      s+=1;
+    }
+
   }
 
 
